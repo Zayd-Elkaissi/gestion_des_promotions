@@ -24,8 +24,8 @@
          
         ?>
         <form action="" method="post">
-            <input type="text" id="promo" name="promo" value="" class="form-control" placeholder="Enter Promotion">
-            <button type="submit" name="submit" value="send" class="btn btn-outline-info col-4 btn btn-center m-2">Send</button>
+            <input type="text" id="promo" name="promo" class="form-control" placeholder="Enter Promotion">
+            <button type="submit" name="submit" value="send" class="btn btn-info col-4 m-2">Send</button>
         </form>
 
         

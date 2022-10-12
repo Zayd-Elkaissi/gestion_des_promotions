@@ -36,6 +36,7 @@
             ?>
             
     <h4> <?php echo $value->getPromo() ?> </h4>
+    <button type="button" name="delete" value="Delete" class="" ></button>
      
      
     </tr>

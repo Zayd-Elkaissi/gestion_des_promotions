@@ -29,4 +29,10 @@ class promoDA{
         
         return $array ;
     }
+
+    public function deletePromo($id){
+        $delete = " DELETE * FROM promotion where id = $id";
+        mysqli_query(getConnectd(),$delete);
+    }
+    
     }

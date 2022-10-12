@@ -36,6 +36,8 @@
             ?>
             
     <h4> <?php echo $value->getPromo() ?> </h4>
+    <a href="delete.php?id=<?php echo $value->getId() ?>">Delete</a>
+    <a href="update.php?id=<?php echo $value->getId() ?>">Edit</a>
      
      
     </tr>

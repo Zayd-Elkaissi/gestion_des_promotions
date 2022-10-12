@@ -24,4 +24,8 @@ class PromoBLL{
 
     }
 
+    function DeleteData($id){
+       return $this->PromoManager->deletePromo($id);
+    }
+
 }
