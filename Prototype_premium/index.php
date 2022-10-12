@@ -24,7 +24,7 @@
          
         ?>
         <form action="" method="post">
-            <input type="text" id="promo" name="promo" value="" class="form-control" placeholder="Enter Promotion">
+            <input type="text" id="promo" name="search" class="form-control" placeholder="Enter Promotion">
             <button type="submit" name="submit" value="send" class="btn btn-outline-info col-4 btn btn-center m-2">Send</button>
         </form>
 
@@ -36,7 +36,7 @@
             ?>
             
     <h4> <?php echo $value->getPromo() ?> </h4>
-    <button type="button" name="delete" value="Delete" class="" ></button>
+    <a href="search.php">search</a>
      
      
     </tr>
