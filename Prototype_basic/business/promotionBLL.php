@@ -15,12 +15,12 @@ class promotionBLL{
 
     function GetAllData(){
 
-       return $this->PromoManager->GetPromo();
+       return $this->PromoManager->GetPromotion();
 
     }
-    function AddData($Promo){
+    function AddData($Promotion){
 
-       return $this->PromoManager->AddPromo($Promo);
+       return $this->PromoManager->AddPromotion($Promotion);
 
     }
 

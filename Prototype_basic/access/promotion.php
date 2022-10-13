@@ -2,7 +2,7 @@
 class Promotion {
 
     private $id;
-    private $promo;
+    private $promotion;
 
 
     public function getId(){
@@ -12,12 +12,12 @@ class Promotion {
         $this->id = $value;
     }
 
-    public function getPromo(){
-        return $this->promo;
+    public function getPromotion(){
+        return $this->promotion;
     }
 
-    public function setPromo($value){
-        $this->promo = $value;
+    public function setPromotion($value){
+        $this->promotion = $value;
     }
 }
 
