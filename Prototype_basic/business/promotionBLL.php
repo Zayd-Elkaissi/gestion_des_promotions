@@ -1,26 +1,26 @@
 <?php
 
-include ("access/promotionDA.php");
+include ("access/promotionDAL.php");
 
 
 class promotionBLL{
 
-    private $PromoManager = null ;
+    private $PromotionManager = null ;
     public  function __construct()
     {
-       $this->PromoManager = new promoDA();
+       $this->PromotionManager = new promotionDAL();
     
     }
 
 
     function GetAllData(){
 
-       return $this->PromoManager->GetPromotion();
+       return $this->PromotionManager->GetPromotion();
 
     }
     function AddData($Promotion){
 
-       return $this->PromoManager->AddPromotion($Promotion);
+       return $this->PromotionManager->AddPromotion($Promotion);
 
     }
 

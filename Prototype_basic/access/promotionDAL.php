@@ -2,7 +2,7 @@
 include ("config.php");
 
 include 'promotion.php';
-class promoDA{
+class promotionDAL{
 
 
     

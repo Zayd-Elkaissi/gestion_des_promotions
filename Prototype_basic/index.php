@@ -10,8 +10,8 @@
     <div>
         <?php
            include "business/promotionBLL.php";
-           $PromoManager = new promotionBLL();
-           $GetData =  $PromoManager->GetAllData();
+           $PromotionManager = new promotionBLL();
+           $GetData =  $PromotionManager->GetAllData();
 
 
            $AddPromotion = new promotionBLL();
@@ -19,7 +19,6 @@
             $promotion  = new Promotion();
             $promotion->setPromotion($_POST["promotion"]);
             $AddPromotion->AddData($promotion);
-            header('Location:index.php');
            }
          
         ?>
