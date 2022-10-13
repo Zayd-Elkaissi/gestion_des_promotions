@@ -2,29 +2,29 @@
 include ("config.php");
 
 include 'promotion.php';
-class promoDA{
+class promotionDAL{
 
 
     
-    public function AddPromo($add){
+    public function AddPromotion($add){
 
-        $promo = $add->getPromo();
-    $insert = "INSERT INTO promotion( `nomPromostion` ) VALUES ('$promo')";
+        $promotion = $add->getPromotion();
+    $insert = "INSERT INTO promotion( `nomPromostion` ) VALUES ('$promotion')";
 
     mysqli_query(getConnected(), $insert);
 }
 
-    public function GetPromo(){
+    public function GetPromotion(){
 
         $array= [];
         $select = "SELECT * from promotion";
         $Query = mysqli_query(getConnected(),$select);
          while($result = mysqli_fetch_assoc($Query)){
 
-        $promo = new Promotion();
+        $promotion = new Promotion();
         // $promo->setId($result['id']);
-        $promo->setPromo($result['nomPromostion']);
-        array_push($array,$promo);
+        $promotion->setPromotion($result['nomPromostion']);
+        array_push($array,$promotion);
         }
         
         return $array ;

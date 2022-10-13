@@ -13,16 +13,15 @@
   <div>
     <?php
            include "business/promotionBLL.php";
-           $PromoManager = new promotionBLL();
-           $GetData =  $PromoManager->GetAllData();
+           $PromotionManager = new promotionBLL();
+           $GetData =  $PromotionManager->GetAllData();
 
 
-           $AddPromo = new promotionBLL();
+           $AddPromotion = new promotionBLL();
            if(!empty($_POST)){
-            $promo  = new Promotion();
-            $promo->setPromo($_POST["promo"]);
-            $AddPromo->AddData($promo);
-            header('Location:index.php');
+            $promotion  = new Promotion();
+            $promotion->setPromotion($_POST["promotion"]);
+            $AddPromotion->AddData($promotion);
            }
          
         ?>
@@ -52,7 +51,7 @@
                 <?php echo $value->getId() ?>
               </td>
               <td>
-                <?php echo $value->getPromo() ?>
+                <?php echo $value->getPromotion() ?>
               </td>
               <td>
                 <a href="Edit.php?id=<?php echo $value->getId() ?>">Edit</a>
