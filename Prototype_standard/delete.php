@@ -1,8 +1,8 @@
 <?php
 
-include "business/promoBLL.php";
+include "business/promotionBLL.php";
 
-$PromoBLL = new PromoBLL();
+$PromoBLL = new promotionBLL();
 
 if(isset($_GET["id"])){
    $id = $_GET["id"];

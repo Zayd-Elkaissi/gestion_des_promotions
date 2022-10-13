@@ -9,12 +9,12 @@
 <body>
     <div>
         <?php
-           include "business/promoBLL.php";
-           $PromoManager = new PromoBLL();
+           include "business/promotionBLL.php";
+           $PromoManager = new promotionBLL();
            $GetData =  $PromoManager->GetAllData();
 
 
-           $AddPromo = new PromoBLL();
+           $AddPromo = new promotionBLL();
            if(!empty($_POST)){
             $promo  = new Promotion();
             $promo->setPromo($_POST["promo"]);

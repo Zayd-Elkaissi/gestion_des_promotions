@@ -3,7 +3,7 @@
 include ("access/promotionDA.php");
 
 
-class PromoBLL{
+class promotionBLL{
 
     private $PromoManager = null ;
     public  function __construct()
@@ -22,6 +22,10 @@ class PromoBLL{
 
        return $this->PromoManager->AddPromo($Promo);
 
+    }
+
+    function DeleteData($id){
+       return $this->PromoManager->deletePromo($id);
     }
 
 }
