@@ -25,7 +25,19 @@ class promotionBLL{
    }
 
     function DeleteData($id){
-       return $this->PromoManager->deletePromo($id);
+       return $this->PromotionManager->deletePromotion($id);
     }
+
+   function EditData($id){
+
+      return $this->PromotionManager->Edit($id);
+
+   }
+
+   function updataData($id,$name){
+
+      return $this->PromotionManager->updataPromotion($id,$name);
+
+   }
 
 }

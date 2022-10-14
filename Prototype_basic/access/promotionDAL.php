@@ -22,7 +22,7 @@ class promotionDAL{
          while($result = mysqli_fetch_assoc($Query)){
 
         $promotion = new Promotion();
-        // $promo->setId($result['id']);
+        // $promotion->setId($result['id']);
         $promotion->setPromotion($result['nomPromostion']);
         array_push($array,$promotion);
         }

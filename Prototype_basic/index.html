@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,19 +26,18 @@
                                 </div>
                                 <?php
            include "business/promotionBLL.php";
-           $PromoManager = new promotionBLL();
+           $PromoManager = new promoBLL();
            $GetData =  $PromoManager->GetAllData();
-
-
-           $AddPromo = new promotionBLL();
+           
+           $AddPromo = new promoBLL();
            if(!empty($_POST)){
             $promo  = new Promotion();
-            $promo->setPromotion($_POST["promo"]);
+            $promo->setPromo($_POST["promo"]);
             $AddPromo->AddData($promo);
             header('Location:index.php');
            }
          
-        ?>
+?>
                                 <div class="col-xs-6">
                                     <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span> Ajouter</span></a>
                                     <form action="" class="d-flex col-md-6" id="for" method="POST">
@@ -60,7 +58,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody id="showS">
+                            <tbody>
                                 <?php 
                                 foreach($GetData as $value){
                                     
@@ -70,12 +68,11 @@
                                     <td>
 
                                     </td>
-                                    <td> <?php echo $value->getPromotion() ?> </td>
+                                    <td><?php echo $value->getPromo() ?></td>
                                     <td>
-                                        <a href="update.php?id=<?php echo $value->getId() ?>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Éditer">&#xE254;</i></a>
-                                        <a href="delete.php?id=<?php echo $value->getId() ?>" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Effacer">&#xE872;</i></a>
+                                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Éditer">&#xE254;</i></a>
+                                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Effacer">&#xE872;</i></a>
                                     </td>
-                                    
                                 </tr>
                                 <?php }?>
                             </tbody>
@@ -108,7 +105,7 @@
             </div>
             
             <!-- Delete Modal HTML -->
-            <!-- <div id="deleteEmployeeModal" class="modal fade">
+            <div id="deleteEmployeeModal" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <form>
@@ -127,32 +124,10 @@
                         </form>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#search').keyup(function () {
-          var input = $(this).val();
-          // alert(input);
-
-          if (input != ' ') {
-            $.ajax({
-              url: "access/search.php",
-              method: "POST",
-              data: { key: input },
-              success: function (data) {
-                $('#showS').html(data);
-              }
-            });
-
-          }
-
-        });
-      });
-    </script>
         <script>
             $(document).ready(function(){
                 // Activate tooltip

@@ -8,8 +8,8 @@ class promotionDAL{
     
     public function AddPromotion($add){
 
-        $promotion = $add->getPromotion();
-    $insert = "INSERT INTO promotion( `nomPromostion` ) VALUES ('$promotion')";
+        $promo = $add->getPromotion();
+    $insert = "INSERT INTO promotion( `nomPromostion` ) VALUES ('$promo')";
 
     mysqli_query(getConnected(), $insert);
 }
@@ -21,19 +21,14 @@ class promotionDAL{
         $Query = mysqli_query(getConnected(),$select);
          while($result = mysqli_fetch_assoc($Query)){
 
-        $promotion = new Promotion();
-        // $promo->setId($result['id']);
-        $promotion->setPromotion($result['nomPromostion']);
-        array_push($array,$promotion);
+        $promo = new Promotion();
+        $promo->setId($result['id']);
+        $promo->setPromotion($result['nomPromostion']);
+        array_push($array,$promo);
         }
         
         return $array ;
     }
-
-    // public function sercherPromo($id){
-    //     $delete = " DELETE * FROM promotion where id = $id";
-    //     mysqli_query(getConnectd(),$delete);
-    // }
 
     public function deletePromotion($id){
         $delete = "DELETE  FROM promotion where id = $id";
@@ -62,5 +57,7 @@ class promotionDAL{
         mysqli_query(getConnected(),$update);
     
     }
+
+
     
     }

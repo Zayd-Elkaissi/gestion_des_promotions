@@ -19,6 +19,7 @@
             $promotion  = new Promotion();
             $promotion->setPromotion($_POST["promotion"]);
             $AddPromotion->AddData($promotion);
+            header('Location:index.php');
            }
          
         ?>

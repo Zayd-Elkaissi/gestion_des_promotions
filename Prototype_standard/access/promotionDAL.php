@@ -2,19 +2,19 @@
 include ("config.php");
 
 include 'promotion.php';
-class promoDA{
+class promotionDAL{
 
 
     
-    public function AddPromo($add){
+    public function AddPromotion($add){
 
-        $promo = $add->getPromo();
+        $promo = $add->getPromotion();
     $insert = "INSERT INTO promotion( `nomPromostion` ) VALUES ('$promo')";
 
     mysqli_query(getConnected(), $insert);
 }
 
-    public function GetPromo(){
+    public function GetPromotion(){
 
         $array= [];
         $select = "SELECT * from promotion";
@@ -23,14 +23,14 @@ class promoDA{
 
         $promo = new Promotion();
         $promo->setId($result['id']);
-        $promo->setPromo($result['nomPromostion']);
+        $promo->setPromotion($result['nomPromostion']);
         array_push($array,$promo);
         }
         
         return $array ;
     }
 
-    public function deletePromo($id){
+    public function deletePromotion($id){
         $delete = "DELETE  FROM promotion where id = $id";
         mysqli_query(getConnected(), $delete);
     }
@@ -42,13 +42,13 @@ class promoDA{
 
         $promo = new Promotion();
         $promo->setId($result['id']);
-        $promo->setPromo($result['nomPromostion']);
+        $promo->setPromotion($result['nomPromostion']);
         }
         
         return $promo ;
     }
 
-    public function updataPromo($id,$name) {
+    public function updataPromotion($id,$name) {
         // Requête SQL
         $update = "UPDATE promotion SET 
         nomPromostion='$name'

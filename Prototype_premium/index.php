@@ -22,6 +22,7 @@
             $promotion  = new Promotion();
             $promotion->setPromotion($_POST["promotion"]);
             $AddPromotion->AddData($promotion);
+            header('Location:index.php');
            }
          
         ?>
@@ -54,8 +55,8 @@
                 <?php echo $value->getPromotion() ?>
               </td>
               <td>
-                <a href="Edit.php?id=<?php echo $value->getId() ?>">Edit</a>
-                <a href="Delete.php?id=<?php echo $value->getId() ?>">Delete</a>
+                <a href="update.php?id=<?php echo $value->getId() ?>">Edit</a>
+                <a href="delete.php?id=<?php echo $value->getId() ?>">Delete</a>
               </td>
             </tr>
             <?php }?>
